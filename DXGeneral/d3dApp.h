@@ -66,6 +66,8 @@ protected:
 	int m_clientWidth;
 	int m_clientHeight;
 	bool m_enable4xMsaa;
+	
+	const bool FULL_SCREEN = false;
 
 };
 

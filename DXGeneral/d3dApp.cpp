@@ -68,6 +68,12 @@ D3DApp::~D3DApp()
 
 	ReleaseCOM(m_d3dImmediateContext);
 	ReleaseCOM(m_d3dDevice);
+
+	//Fix the display settings if leaving full screen mode
+	if (FULL_SCREEN)
+	{
+		ChangeDisplaySettings(NULL, 0);
+	}
 }
 
 HINSTANCE D3DApp::AppInst()const
@@ -333,6 +339,11 @@ LRESULT D3DApp::MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
 bool D3DApp::InitMainWindow()
 {
+
+	DEVMODE dmScreenSettings;
+	int posX, posY;
+	int width, height;
+
 	WNDCLASS wc;
 	wc.style = CS_HREDRAW | CS_VREDRAW; //to be repainted when either the hori or the vert window size is changed
 	wc.lpfnWndProc = MainWndProc;
@@ -351,14 +362,49 @@ bool D3DApp::InitMainWindow()
 		return false;
 	}
 
+	
+
 	//Compute Window rectangle dimensions based on requested client area dimensions
-	RECT R = { 0,0,m_clientWidth, m_clientHeight };
-	AdjustWindowRect(&R, WS_OVERLAPPEDWINDOW, false);
-	int width = R.right - R.left;
-	int height = R.bottom - R.top;
+
+	if (FULL_SCREEN)
+	{
+		//Fullscreen mode
+
+		//determine the resolution of the clients desktop screen
+		m_clientWidth = GetSystemMetrics(SM_CXSCREEN);
+		m_clientHeight = GetSystemMetrics(SM_CYSCREEN);
+		
+
+		ZeroMemory(&dmScreenSettings, sizeof(dmScreenSettings));
+		dmScreenSettings.dmSize = sizeof(dmScreenSettings);
+		dmScreenSettings.dmPelsWidth = (unsigned long)m_clientWidth;
+		dmScreenSettings.dmPelsHeight = (unsigned long)m_clientHeight;
+		dmScreenSettings.dmBitsPerPel = 32;
+		dmScreenSettings.dmFields = DM_BITSPERPEL | DM_PELSWIDTH | DM_PELSHEIGHT;
+
+		//change the display settings to full screen
+		ChangeDisplaySettings(&dmScreenSettings, CDS_FULLSCREEN);
+
+		//Set the position of the window to the top left corner
+		posX = posY = 0;
+		width = m_clientWidth;
+		height = m_clientHeight;
+	}
+	else
+	{
+		//Windowed mode
+		RECT R = { 0,0,m_clientWidth, m_clientHeight };
+		AdjustWindowRect(&R, WS_OVERLAPPEDWINDOW, false);
+		width = R.right - R.left;
+		height = R.bottom - R.top;
+
+		posX = CW_USEDEFAULT;
+		posY = CW_USEDEFAULT;
+	}
+
 
 	m_hMainWnd = CreateWindow(L"BasicWndClass", m_mainWndCaption.c_str(),
-		WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, width, height, 0, 0, m_hAppInst, 0);
+		WS_OVERLAPPEDWINDOW, posX, posY, width, height, 0, 0, m_hAppInst, 0);
 	if (!m_hMainWnd)
 	{
 		MessageBox(0, L"CreateWindow Failed.", 0, 0);
@@ -367,6 +413,10 @@ bool D3DApp::InitMainWindow()
 
 	ShowWindow(m_hMainWnd, SW_SHOW);
 	UpdateWindow(m_hMainWnd);
+
+	//set it as main focus
+	SetForegroundWindow(m_hMainWnd);
+	SetFocus(m_hMainWnd);
 
 	return true;
 
