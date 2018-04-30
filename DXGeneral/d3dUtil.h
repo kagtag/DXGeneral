@@ -17,7 +17,7 @@
 #include<d3d11.h>
 #include "MathHelper.h"
 
-
+#include<d3dcompiler.h>
 
 #include<vector>
 #include<string>
@@ -50,6 +50,9 @@
 #define ReleaseCOM(x) {if(x) { x->Release(); x=0; }}
 
 #define SafeDelete(x) ( delete x; x=0; )
+
+
+void OutputShaderErrorMessage(ID3D10Blob* errorMessage, HWND hwnd, WCHAR* shaderFilename);
 
 //For chapter 11 geometry shader
 class D3DHelper
@@ -91,7 +94,8 @@ public:
 void ExtractFrustumPlanes(XMFLOAT4 planes[6], CXMMATRIX M);
 
 namespace Colors
-{
+{ 
+	//const XMVECTOR instances should use the XMVECTORF32 type
 	XMGLOBALCONST XMVECTORF32 White = { 1.0f,1.0f,1.0f,1.0f };
 	XMGLOBALCONST XMVECTORF32 Black = { 0.0f,0.0f,0.0f,1.0f };
 	XMGLOBALCONST XMVECTORF32 Red = { 1.0f,0.0f,0.0f,1.0f };

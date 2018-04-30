@@ -94,8 +94,10 @@ float D3DApp::AspectRatio()const
 int D3DApp::Run()
 {
 	MSG msg = { 0 };
+	bool result;
 
 	m_timer.Reset();
+	
 
 	while (msg.message != WM_QUIT)
 	{
@@ -115,7 +117,11 @@ int D3DApp::Run()
 			{
 				CalculateFrameStats();
 				UpdateScene(m_timer.DeltaTime());
-				DrawScene();
+				result = DrawScene();
+				if (!result)
+				{
+					return -1;
+				}
 			}
 			else
 			{
@@ -490,7 +496,16 @@ bool D3DApp::InitDirect3D()
 	sd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
 	sd.BufferCount = 1;
 	sd.OutputWindow = m_hMainWnd;
-	sd.Windowed = true;
+
+	if (FULL_SCREEN)
+	{
+		sd.Windowed = false;
+	}
+	else
+	{
+		sd.Windowed = true;
+	}
+	
 	sd.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
 	sd.Flags = 0;
 

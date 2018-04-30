@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DXGeneral", "DXGeneral\DXGeneral.vcxproj", "{8E95F996-16EF-4235-AFA4-85E046FC10EF}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BoxDemo", "BoxDemo\BoxDemo.vcxproj", "{D6379056-0F22-4C70-8AF7-FA0F66BB37B4}"
-	ProjectSection(ProjectDependencies) = postProject
-		{8E95F996-16EF-4235-AFA4-85E046FC10EF} = {8E95F996-16EF-4235-AFA4-85E046FC10EF}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

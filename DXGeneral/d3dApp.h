@@ -27,7 +27,7 @@ public:
 	virtual bool Init();
 	virtual void OnResize();
 	virtual void UpdateScene(float dt) = 0;
-	virtual void DrawScene() = 0;
+	virtual bool DrawScene() = 0;
 	virtual LRESULT MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 	virtual void OnMouseDown(WPARAM btnState, int x, int y);
@@ -67,8 +67,9 @@ protected:
 	int m_clientHeight;
 	bool m_enable4xMsaa;
 	
+	//
 	const bool FULL_SCREEN = false;
-
+	const bool VSYNC_ENABLED = true;
 };
 
 #endif
