@@ -60,6 +60,8 @@ protected:
 	ID3D11DepthStencilView* m_depthStencilView;
 	D3D11_VIEWPORT m_screenViewport;
 
+	ID3D11RasterizerState* m_rasterState;
+
 	//Derived class should set these in derived constructor to customize starting values
 	std::wstring m_mainWndCaption;
 	D3D_DRIVER_TYPE m_d3dDriverType;

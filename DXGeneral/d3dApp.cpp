@@ -59,6 +59,7 @@ D3DApp::~D3DApp()
 	ReleaseCOM(m_depthStencilView);
 	ReleaseCOM(m_swapChain);
 	ReleaseCOM(m_depthStencilBuffer);
+	ReleaseCOM(m_rasterState);
 
 	//Restore all default settings
 	if (m_d3dImmediateContext)
@@ -202,6 +203,26 @@ void D3DApp::OnResize()
 
 	//Bind the render target view and depth/stencil view to the pipeline
 	m_d3dImmediateContext->OMSetRenderTargets(1, &m_renderTargetView, m_depthStencilView);
+
+
+	//Setup Rasterizer State
+	D3D11_RASTERIZER_DESC rasterDesc;
+
+	//Setup the raster description which will determine how and what polygons will be drawn
+	rasterDesc.AntialiasedLineEnable = false;
+	rasterDesc.CullMode = D3D11_CULL_BACK;
+	rasterDesc.DepthBias = 0;
+	rasterDesc.DepthBiasClamp = 0.0f;
+	rasterDesc.DepthClipEnable = true;
+	rasterDesc.FillMode = D3D11_FILL_SOLID;
+	rasterDesc.FrontCounterClockwise = false;
+	rasterDesc.MultisampleEnable = false;
+	rasterDesc.ScissorEnable = false;
+	rasterDesc.SlopeScaledDepthBias = 0.0f;
+
+	//Create the rasterizer state from the description we just filled out
+	HR(m_d3dDevice->CreateRasterizerState(&rasterDesc, &m_rasterState));
+	m_d3dImmediateContext->RSSetState(m_rasterState);
 
 	//Set the viewport transform
 	//Occupy the entire client window
