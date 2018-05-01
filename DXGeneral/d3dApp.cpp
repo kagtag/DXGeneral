@@ -174,7 +174,7 @@ void D3DApp::OnResize()
 
 	D3D11_TEXTURE2D_DESC depthStencilDesc;
 
-	depthStencilDesc.Width - m_clientWidth;
+	depthStencilDesc.Width = m_clientWidth;
 	depthStencilDesc.Height = m_clientHeight;
 	depthStencilDesc.MipLevels = 1;
 	depthStencilDesc.ArraySize = 1;

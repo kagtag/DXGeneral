@@ -130,10 +130,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\DXGeneral\d3dApp.cpp" />
+    <ClCompile Include="..\DXGeneral\d3dUtil.cpp" />
+    <ClCompile Include="..\DXGeneral\DDSTextureLoader.cpp" />
+    <ClCompile Include="..\DXGeneral\dxerr.cpp" />
+    <ClCompile Include="..\DXGeneral\GameTimer.cpp" />
+    <ClCompile Include="..\DXGeneral\MathHelper.cpp" />
     <ClCompile Include="BoxDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\DXGeneral\d3dApp.h" />
+    <ClInclude Include="..\DXGeneral\d3dUtil.h" />
+    <ClInclude Include="..\DXGeneral\DDSTextureLoader.h" />
+    <ClInclude Include="..\DXGeneral\dxerr.h" />
+    <ClInclude Include="..\DXGeneral\GameTimer.h" />
+    <ClInclude Include="..\DXGeneral\MathHelper.h" />
     <ClInclude Include="BoxDemo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="box.ps" />
+    <None Include="box.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

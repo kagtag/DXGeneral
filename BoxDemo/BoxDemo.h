@@ -14,7 +14,7 @@
 #include"d3dApp.h"
 #include"MathHelper.h"
 
-
+#include"dxerr.h"
 
 
 class BoxApp :public D3DApp

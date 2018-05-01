@@ -32,6 +32,18 @@ BoxApp::BoxApp(HINSTANCE hInstance)
 	XMStoreFloat4x4(&m_proj, I);
 }
 
+BoxApp::~BoxApp()
+{
+	ReleaseCOM(m_boxVB);
+	ReleaseCOM(m_boxIB);
+	ReleaseCOM(m_inputLayout);
+
+	ReleaseCOM(m_vertexShader);
+	ReleaseCOM(m_pixelShader);
+	ReleaseCOM(m_matrixBuffer);
+
+}
+
 bool BoxApp::Init()
 {
 	bool result;
@@ -48,7 +60,7 @@ bool BoxApp::Init()
 	//BuildFX();
 	//BuildVertexLayout();
 
-	result = BuildShader(L"color.vs", L"color.ps"); //Use raw shader instead of FX framework
+	result = BuildShader(L"box.vs", L"box.ps"); //Use raw shader instead of FX framework
 	if (!result)
 	{
 		return false;

@@ -13,15 +13,62 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="DXGeneral">
+      <UniqueIdentifier>{19d61aae-e53f-4f54-85c2-b421e3b4f093}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BoxDemo.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\d3dApp.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\d3dUtil.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\DDSTextureLoader.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\dxerr.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\GameTimer.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\MathHelper.cpp">
+      <Filter>DXGeneral</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoxDemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\DXGeneral\d3dApp.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\d3dUtil.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\DDSTextureLoader.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\dxerr.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\GameTimer.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\MathHelper.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="box.vs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="box.ps">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
