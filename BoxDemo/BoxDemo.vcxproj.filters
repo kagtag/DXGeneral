@@ -39,6 +39,9 @@
     <ClCompile Include="..\DXGeneral\MathHelper.cpp">
       <Filter>DXGeneral</Filter>
     </ClCompile>
+    <ClCompile Include="..\DXGeneral\GeometryGenerator.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoxDemo.h">
@@ -60,6 +63,9 @@
       <Filter>DXGeneral</Filter>
     </ClInclude>
     <ClInclude Include="..\DXGeneral\MathHelper.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\GeometryGenerator.h">
       <Filter>DXGeneral</Filter>
     </ClInclude>
   </ItemGroup>

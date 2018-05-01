@@ -370,7 +370,7 @@ void BoxApp::OnMouseMove(WPARAM btnState, int x, int y)
 bool BoxApp::BuildGeometryBuffers()
 {
 	//Create vertex buffer
-	Vertex vertices[] =
+	VertexType vertices[] =
 	{
 		{ XMFLOAT3(-1.0f, -1.0f, -1.0f), XMFLOAT4((const float*)&Colors::White) }, //the constructor might be explicit
 		{ XMFLOAT3(-1.0f, +1.0f, -1.0f), XMFLOAT4((const float*)&Colors::Black) },
@@ -384,7 +384,7 @@ bool BoxApp::BuildGeometryBuffers()
 
 	D3D11_BUFFER_DESC vbd;
 	vbd.Usage = D3D11_USAGE_IMMUTABLE;
-	vbd.ByteWidth = sizeof(Vertex) * 8;
+	vbd.ByteWidth = sizeof(VertexType) * 8;
 	vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
 	vbd.CPUAccessFlags = 0;
 	vbd.MiscFlags = 0;
@@ -439,7 +439,7 @@ bool BoxApp::BuildGeometryBuffers()
 void BoxApp::RenderBuffers()
 {
 
-	UINT stride = sizeof(Vertex);
+	UINT stride = sizeof(VertexType);
 	UINT offset = 0; //you may want to skip some vertex data in the front of the vertex buffer
 
 	// Set the vertex buffer to active in the input assembler so it can be rendered.

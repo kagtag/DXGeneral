@@ -22,7 +22,7 @@ class BoxApp :public D3DApp
 private:
 
 	//Vertex Shader
-	struct Vertex
+	struct VertexType
 	{
 		XMFLOAT3 Pos;
 		XMFLOAT4 Color;

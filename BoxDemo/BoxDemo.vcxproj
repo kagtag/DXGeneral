@@ -135,6 +135,7 @@
     <ClCompile Include="..\DXGeneral\DDSTextureLoader.cpp" />
     <ClCompile Include="..\DXGeneral\dxerr.cpp" />
     <ClCompile Include="..\DXGeneral\GameTimer.cpp" />
+    <ClCompile Include="..\DXGeneral\GeometryGenerator.cpp" />
     <ClCompile Include="..\DXGeneral\MathHelper.cpp" />
     <ClCompile Include="BoxDemo.cpp" />
   </ItemGroup>
@@ -144,6 +145,7 @@
     <ClInclude Include="..\DXGeneral\DDSTextureLoader.h" />
     <ClInclude Include="..\DXGeneral\dxerr.h" />
     <ClInclude Include="..\DXGeneral\GameTimer.h" />
+    <ClInclude Include="..\DXGeneral\GeometryGenerator.h" />
     <ClInclude Include="..\DXGeneral\MathHelper.h" />
     <ClInclude Include="BoxDemo.h" />
   </ItemGroup>
