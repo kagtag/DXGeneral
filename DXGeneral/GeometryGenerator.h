@@ -49,4 +49,37 @@ public:
 	///</summary>
 	void CreateGrid(float width, float depth, UINT m, UINT n, MeshData& meshData);
 
+
+	//Define a cylinder by its bottom and top radius, its height, and the slice and stack count
+	///<summary>
+	/// Creates a cylinder parallel to the y-axis, and centered about the origin.  
+	/// The bottom and top radius can vary to form various cone shapes rather than true
+	// cylinders.  The slices and stacks parameters control the degree of tessellation.
+	///</summary>
+	void CreateCylinder(float bottomRadius, float topRadius, float height, UINT sliceCount, UINT stackCount, MeshData& meshData);
+
+	//Define a sphere similar to cylinder
+	//Do not have equal areas
+	///<summary>
+	/// Creates a sphere centered at the origin with the given radius.  The
+	/// slices and stacks parameters control the degree of tessellation.
+	///</summary>
+	void CreateSphere(float radius, UINT sliceCount, UINT stackCount, MeshData& meshData);
+
+	//Improved version of spehere
+	//triangles of nearly equal areas as well as equal side lengths
+	///<summary>
+	/// Creates a geosphere centered at the origin with the given radius.  The
+	/// depth controls the level of tessellation.
+	///</summary>
+	void CreateGeosphere(float radius, UINT numSubdivisions, MeshData& meshData);
+
+private:
+
+	//helper functions for building cylinder
+	void BuildCylinderTopCap(float bottomRadius, float topRadius, float height, UINT sliceCount, UINT stackCount, MeshData& meshData);
+	void BuildCylinderBottomCap(float bottomRadius, float topRadius, float height, UINT sliceCount, UINT stackCount, MeshData& meshData);
+
+	//helper function for building geosphere
+	void Subdivide(MeshData& meshData);
 };
