@@ -55,8 +55,6 @@ private:
 	ID3D11InputLayout *m_inputLayout;
 
 	ID3D11Buffer* m_matrixBuffer;
-
-	int m_indexCount;
 	
 	//
 	ID3D11RasterizerState* m_wireFrameRS;
