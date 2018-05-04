@@ -74,6 +74,11 @@ public:
 	///</summary>
 	void CreateGeosphere(float radius, UINT numSubdivisions, MeshData& meshData);
 
+	///<summary>
+	/// Creates a box centered at the origin with the given dimensions.
+	///</summary>
+	void CreateBox(float width, float height, float depth, MeshData& meshData);
+
 private:
 
 	//helper functions for building cylinder
