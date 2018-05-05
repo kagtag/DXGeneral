@@ -22,7 +22,7 @@ WavesApp::WavesApp(HINSTANCE hInstance)
 	m_wavesVB(0), m_wavesIB(0),
 	m_vertexShader(0), m_pixelShader(0),
 	m_inputLayout(0), m_wireframeRS(0),
-	m_theta(1.5f*MathHelper::Pi), m_phi(0.1f*MathHelper::Pi), m_radius(15.0f),
+	m_theta(1.5f*MathHelper::Pi), m_phi(0.1f*MathHelper::Pi), m_radius(200.0f),
 	m_matrixBuffer(0)
 {
 	m_mainWndCaption = L"Waves Demo";
