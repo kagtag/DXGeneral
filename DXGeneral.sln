@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShapesDemo", "ShapesDemo\Sh
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SkullDemo", "SkullDemo\SkullDemo.vcxproj", "{D83D26D1-8295-4170-953A-DE8CE2B144FA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WavesDemo", "WavesDemo\WavesDemo.vcxproj", "{0806F967-975C-4392-916B-7BEFD603135D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{D83D26D1-8295-4170-953A-DE8CE2B144FA}.Release|x64.Build.0 = Release|x64
 		{D83D26D1-8295-4170-953A-DE8CE2B144FA}.Release|x86.ActiveCfg = Release|Win32
 		{D83D26D1-8295-4170-953A-DE8CE2B144FA}.Release|x86.Build.0 = Release|Win32
+		{0806F967-975C-4392-916B-7BEFD603135D}.Debug|x64.ActiveCfg = Debug|x64
+		{0806F967-975C-4392-916B-7BEFD603135D}.Debug|x64.Build.0 = Debug|x64
+		{0806F967-975C-4392-916B-7BEFD603135D}.Debug|x86.ActiveCfg = Debug|Win32
+		{0806F967-975C-4392-916B-7BEFD603135D}.Debug|x86.Build.0 = Debug|Win32
+		{0806F967-975C-4392-916B-7BEFD603135D}.Release|x64.ActiveCfg = Release|x64
+		{0806F967-975C-4392-916B-7BEFD603135D}.Release|x64.Build.0 = Release|x64
+		{0806F967-975C-4392-916B-7BEFD603135D}.Release|x86.ActiveCfg = Release|Win32
+		{0806F967-975C-4392-916B-7BEFD603135D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
