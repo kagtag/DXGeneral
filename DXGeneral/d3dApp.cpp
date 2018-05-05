@@ -40,7 +40,8 @@ D3DApp::D3DApp(HINSTANCE hInstance)
 	m_swapChain(0),
 	m_depthStencilBuffer(0),
 	m_renderTargetView(0),
-	m_depthStencilView(0)
+	m_depthStencilView(0),
+	m_rasterState(0)
 {
 	ZeroMemory(&m_screenViewport, sizeof(D3D11_VIEWPORT)); //specifies the view port used to display the final frame
 	//relative the the window.
