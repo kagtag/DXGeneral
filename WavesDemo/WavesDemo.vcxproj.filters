@@ -42,8 +42,11 @@
     <ClCompile Include="..\DXGeneral\MathHelper.cpp">
       <Filter>DXGeneral</Filter>
     </ClCompile>
-    <ClCompile Include="Waves.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\DXGeneral\LightHelper.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\Waves.cpp">
+      <Filter>DXGeneral</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -71,8 +74,11 @@
     <ClInclude Include="..\DXGeneral\MathHelper.h">
       <Filter>DXGeneral</Filter>
     </ClInclude>
-    <ClInclude Include="Waves.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\DXGeneral\LightHelper.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\Waves.h">
+      <Filter>DXGeneral</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

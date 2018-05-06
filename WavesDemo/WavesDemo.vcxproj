@@ -129,8 +129,9 @@
     <ClCompile Include="..\DXGeneral\dxerr.cpp" />
     <ClCompile Include="..\DXGeneral\GameTimer.cpp" />
     <ClCompile Include="..\DXGeneral\GeometryGenerator.cpp" />
+    <ClCompile Include="..\DXGeneral\LightHelper.cpp" />
     <ClCompile Include="..\DXGeneral\MathHelper.cpp" />
-    <ClCompile Include="Waves.cpp" />
+    <ClCompile Include="..\DXGeneral\Waves.cpp" />
     <ClCompile Include="WavesDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -140,8 +141,9 @@
     <ClInclude Include="..\DXGeneral\dxerr.h" />
     <ClInclude Include="..\DXGeneral\GameTimer.h" />
     <ClInclude Include="..\DXGeneral\GeometryGenerator.h" />
+    <ClInclude Include="..\DXGeneral\LightHelper.h" />
     <ClInclude Include="..\DXGeneral\MathHelper.h" />
-    <ClInclude Include="Waves.h" />
+    <ClInclude Include="..\DXGeneral\Waves.h" />
     <ClInclude Include="WavesDemo.h" />
   </ItemGroup>
   <ItemGroup>
