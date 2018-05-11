@@ -19,6 +19,9 @@ public:
 	//Returns the solution at the ith grid point
 	const XMFLOAT3& operator[](int i)const { return m_currSolution[i]; }
 
+	const XMFLOAT3& Normal(int i)const { return m_normals[i]; }
+	const XMFLOAT3& TangentX(int i)const { return m_tangentX[i]; }
+
 	void Init(UINT m, UINT n, float dx, float dt, float speed, float damping);
 	void Update(float dt);
 	void Disturb(UINT i, UINT j, float magnitude);
@@ -40,5 +43,8 @@ private:
 
 	XMFLOAT3* m_prevSolution;
 	XMFLOAT3* m_currSolution;
+
+	XMFLOAT3* m_normals;
+	XMFLOAT3* m_tangentX;
 
 };

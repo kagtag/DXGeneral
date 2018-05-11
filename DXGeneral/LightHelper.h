@@ -63,6 +63,6 @@ struct Material
 	XMFLOAT4 Ambient;
 	XMFLOAT4 Diffuse;
 	XMFLOAT4 Specular; // w = SpecPower
-	XMFLOAT4 Reflect;
+	//XMFLOAT4 Reflect;
 
 };

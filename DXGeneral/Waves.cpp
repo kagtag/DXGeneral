@@ -66,8 +66,14 @@ void Waves::Init(UINT m, UINT n, float dx, float dt, float speed, float damping)
 	delete[] m_prevSolution;
 	delete[] m_currSolution;
 
+	delete[] m_normals;
+	delete[] m_tangentX;
+
 	m_prevSolution = new XMFLOAT3[m*n];
 	m_currSolution = new XMFLOAT3[m*n];
+
+	m_normals = new XMFLOAT3[m*n];
+	m_tangentX = new XMFLOAT3[m*n];
 
 	//Generate grid vertices in system memory
 	float halfWidth = (n - 1)*dx*0.5f;
@@ -82,6 +88,9 @@ void Waves::Init(UINT m, UINT n, float dx, float dt, float speed, float damping)
 			//row major
 			m_prevSolution[i*n + j] = XMFLOAT3(x, 0.0f, z);
 			m_currSolution[i*n + j] = XMFLOAT3(x, 0.0f, z);
+
+			m_normals[i*n + j] = XMFLOAT3(0.0f, 1.0f, 0.0f);
+			m_tangentX[i*n + j] = XMFLOAT3(1.0f, 0.0f, 0.0f);
 		}
 	}
 
@@ -134,6 +143,33 @@ void Waves::Update(float dt)
 		std::swap(m_prevSolution, m_currSolution);
 
 		t = 0.0f; //reset time
+
+		//Compute normals using finite difference scheme
+		for (UINT i = 1; i < m_numRows-1; ++i)
+		{
+			for (UINT j = 1; j < m_numCols-1; ++j)
+			{
+				//4 points surrounding the ijth vertex 
+				float l = m_currSolution[i*m_numCols + j - 1].y;
+				float r = m_currSolution[i*m_numCols + j + 1].y;
+				float t = m_currSolution[(i - 1)*m_numCols + j].y;
+				float b = m_currSolution[(i + 1)*m_numCols + j].y;
+
+				m_normals[i*m_numCols + j].x = -r + l;
+				m_normals[i*m_numCols + j].y = 2.0f*m_spatialStep;
+				m_normals[i*m_numCols + j].z = b - t;
+
+				//normalization
+				XMVECTOR n = XMVector3Normalize(XMLoadFloat3(&m_normals[i*m_numCols + j]));
+				XMStoreFloat3(&m_normals[i*m_numCols + j], n);
+
+				//
+				m_tangentX[i*m_numCols + j] = XMFLOAT3(2.0f*m_spatialStep, r - l, 0.0f);
+				XMVECTOR T = XMVector3Normalize(XMLoadFloat3(&m_tangentX[i*m_numCols + j]));
+				XMStoreFloat3(&m_tangentX[i*m_numCols + j], T);
+
+			}
+		}
 	}
 }
 

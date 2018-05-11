@@ -42,7 +42,7 @@ private:
 	bool SetShaderParameters(XMMATRIX, XMMATRIX, XMMATRIX, int, int, int);
 	void RenderShader(int, int, int);
 
-	void RenderBuffers();
+	//void RenderBuffers();
 
 private:
 	ID3D11Buffer* m_landVB;

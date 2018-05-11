@@ -68,7 +68,7 @@ bool WavesApp::Init()
 	BuildLandGeometryBuffers();
 	BuildWavesGeometryBuffers();
 
-	bool result = BuildShader(L"waves.vs", L"waves.ps");
+	bool result = BuildShader(L"wavesVS.hlsl", L"wavesPS.hlsl");
 	if (!result)
 	{
 		return false;

@@ -14,13 +14,10 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="DXGeneral">
-      <UniqueIdentifier>{7435c0da-bf86-4489-aa87-932b9323a188}</UniqueIdentifier>
+      <UniqueIdentifier>{66d80543-9bfd-4cd1-8155-d50b8391fe1f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WavesDemo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\DXGeneral\d3dApp.cpp">
       <Filter>DXGeneral</Filter>
     </ClCompile>
@@ -45,14 +42,14 @@
     <ClCompile Include="..\DXGeneral\LightHelper.cpp">
       <Filter>DXGeneral</Filter>
     </ClCompile>
+    <ClCompile Include="LightingDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\DXGeneral\Waves.cpp">
       <Filter>DXGeneral</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WavesDemo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\DXGeneral\d3dApp.h">
       <Filter>DXGeneral</Filter>
     </ClInclude>
@@ -77,16 +74,24 @@
     <ClInclude Include="..\DXGeneral\LightHelper.h">
       <Filter>DXGeneral</Filter>
     </ClInclude>
+    <ClInclude Include="LightingDemo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\DXGeneral\Waves.h">
       <Filter>DXGeneral</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="wavesPS.hlsl">
+    <None Include="lighting.hlsli">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="wavesVS.hlsl">
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="lightingPS.hlsl">
       <Filter>Resource Files</Filter>
-    </None>
+    </FxCompile>
+    <FxCompile Include="lightingVS.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

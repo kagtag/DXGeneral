@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{0806F967-975C-4392-916B-7BEFD603135D}</ProjectGuid>
-    <RootNamespace>WavesDemo</RootNamespace>
+    <ProjectGuid>{8782E5E8-137C-4880-BEBA-0B72D7709907}</ProjectGuid>
+    <RootNamespace>Lighing</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -132,7 +132,7 @@
     <ClCompile Include="..\DXGeneral\LightHelper.cpp" />
     <ClCompile Include="..\DXGeneral\MathHelper.cpp" />
     <ClCompile Include="..\DXGeneral\Waves.cpp" />
-    <ClCompile Include="WavesDemo.cpp" />
+    <ClCompile Include="LightingDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\DXGeneral\d3dApp.h" />
@@ -144,11 +144,24 @@
     <ClInclude Include="..\DXGeneral\LightHelper.h" />
     <ClInclude Include="..\DXGeneral\MathHelper.h" />
     <ClInclude Include="..\DXGeneral\Waves.h" />
-    <ClInclude Include="WavesDemo.h" />
+    <ClInclude Include="LightingDemo.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="wavesPS.hlsl" />
-    <None Include="wavesVS.hlsl" />
+    <None Include="lighting.hlsli">
+      <FileType>Document</FileType>
+    </None>
+    <FxCompile Include="lightingPS.hlsl">
+      <FileType>Document</FileType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">LightingPixelShader</EntryPointName>
+    </FxCompile>
+    <FxCompile Include="lightingVS.hlsl">
+      <FileType>Document</FileType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">LightingVertexShader</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

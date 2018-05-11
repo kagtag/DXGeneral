@@ -56,6 +56,10 @@ public:
 		//Inverse-transpose is just applied to normals
 		//so zero out translation row
 		//we don't want the inverse-transpose of the translation
+
+		//Moreover, keeping the translation would cause errors if the 
+		//result matrix were to multiplied with another matrix that does not
+		//contain nonuniform scaling
 		XMMATRIX A = M;
 		A.r[3] = XMVectorSet(0.0f, 0.0f, 0.0f, 1.0f);
 
