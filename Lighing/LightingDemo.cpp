@@ -441,7 +441,7 @@ bool LightingApp::BuildShader(WCHAR* vsFilename, WCHAR* psFilename)
 	pixelShaderBuffer = 0;
 
 	//compile the vertex shader code
-	result = D3DCompileFromFile(vsFilename, NULL, D3D_COMPILE_STANDARD_FILE_INCLUDE, "LightingVertexShader", "vs_5_0", D3DCOMPILE_ENABLE_STRICTNESS|D3DCOMPILE_DEBUG,
+	result = D3DCompileFromFile(vsFilename, NULL, D3D_COMPILE_STANDARD_FILE_INCLUDE, "LightingVertexShader", "vs_5_0", D3DCOMPILE_ENABLE_STRICTNESS|D3DCOMPILE_DEBUG|D3DCOMPILE_SKIP_OPTIMIZATION,
 		0, &vertexShaderBuffer, &errorMessage);
 	if (FAILED(result))
 	{
@@ -459,7 +459,7 @@ bool LightingApp::BuildShader(WCHAR* vsFilename, WCHAR* psFilename)
 	}
 
 	//compile the pixel shader code
-	result = D3DCompileFromFile(psFilename, NULL, D3D_COMPILE_STANDARD_FILE_INCLUDE, "LightingPixelShader", "ps_5_0", D3DCOMPILE_ENABLE_STRICTNESS | D3DCOMPILE_DEBUG,
+	result = D3DCompileFromFile(psFilename, NULL, D3D_COMPILE_STANDARD_FILE_INCLUDE, "LightingPixelShader", "ps_5_0", D3DCOMPILE_ENABLE_STRICTNESS | D3DCOMPILE_DEBUG|D3DCOMPILE_SKIP_OPTIMIZATION,
 		0, &pixelShaderBuffer, &errorMessage);
 	if (FAILED(result))
 	{
