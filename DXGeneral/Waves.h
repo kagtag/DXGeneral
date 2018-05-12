@@ -15,6 +15,8 @@ public:
 	UINT ColumnCount()const;
 	UINT VertexCount()const;
 	UINT TriangleCount()const;
+	float Width()const;
+	float Depth()const;
 
 	//Returns the solution at the ith grid point
 	const XMFLOAT3& operator[](int i)const { return m_currSolution[i]; }

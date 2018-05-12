@@ -37,6 +37,16 @@ UINT Waves::TriangleCount()const
 	return m_triangleCount;
 }
 
+float Waves::Width()const
+{
+	return m_numCols*m_spatialStep;
+}
+
+float Waves::Depth()const
+{
+	return m_numRows*m_spatialStep;
+}
+
 //
 //Approximation of differential equations
 //dx: distance between adjacent vertices, in both x and z direction

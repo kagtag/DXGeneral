@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lighing", "Lighing\Lighing.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CrateDemo", "CrateDemo\CrateDemo.vcxproj", "{E4DB1280-0458-4CFD-8A54-582AB054807B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextureHillsAndWaves", "TextureHillsAndWaves\TextureHillsAndWaves.vcxproj", "{E5A5FF76-A680-4507-BD5C-B50D87D37E73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +83,14 @@ Global
 		{E4DB1280-0458-4CFD-8A54-582AB054807B}.Release|x64.Build.0 = Release|x64
 		{E4DB1280-0458-4CFD-8A54-582AB054807B}.Release|x86.ActiveCfg = Release|Win32
 		{E4DB1280-0458-4CFD-8A54-582AB054807B}.Release|x86.Build.0 = Release|Win32
+		{E5A5FF76-A680-4507-BD5C-B50D87D37E73}.Debug|x64.ActiveCfg = Debug|x64
+		{E5A5FF76-A680-4507-BD5C-B50D87D37E73}.Debug|x64.Build.0 = Debug|x64
+		{E5A5FF76-A680-4507-BD5C-B50D87D37E73}.Debug|x86.ActiveCfg = Debug|Win32
+		{E5A5FF76-A680-4507-BD5C-B50D87D37E73}.Debug|x86.Build.0 = Debug|Win32
+		{E5A5FF76-A680-4507-BD5C-B50D87D37E73}.Release|x64.ActiveCfg = Release|x64
+		{E5A5FF76-A680-4507-BD5C-B50D87D37E73}.Release|x64.Build.0 = Release|x64
+		{E5A5FF76-A680-4507-BD5C-B50D87D37E73}.Release|x86.ActiveCfg = Release|Win32
+		{E5A5FF76-A680-4507-BD5C-B50D87D37E73}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
