@@ -4,6 +4,8 @@
 #
 *.cso
 shader-error.txt
+*.cod
+*.fxo
 
 # User-specific files
 *.suo

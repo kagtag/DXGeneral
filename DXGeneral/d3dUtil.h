@@ -14,17 +14,22 @@
 #pragma comment(lib, "dxgi.lib")
 #pragma comment(lib, "d3dcompiler.lib")
 
-#include<d3d11.h>
+#include"d3dx11effect.h"
+
+//#include<d3d11.h>
 #include "MathHelper.h"
+#include "LightHelper.h"
 
 #include<d3dcompiler.h>
 
 #include<vector>
 #include<string>
 #include<sstream>
+#include<fstream>
 
 
 #include "dxerr.h"
+#include "DDSTextureLoader.h"
 
 //#include<DirectXPackedVector.h>
 //using namespace DirectX;
@@ -49,7 +54,7 @@
 
 #define ReleaseCOM(x) {if(x) { x->Release(); x=0; }}
 
-#define SafeDelete(x) ( delete x; x=0; )
+#define SafeDelete(x) { delete x; x=0; }
 
 
 void OutputShaderErrorMessage(ID3D10Blob* errorMessage, HWND hwnd, WCHAR* shaderFilename);
