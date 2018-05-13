@@ -16,7 +16,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
 }
 
 CrateApp::CrateApp(HINSTANCE hInstance)
-	:D3DApp(hInstance), mBoxVB(0), mBoxIB(0), mDiffuseMapSRV(0), mEyePosW(0.0f, 0.0f, 0.0f),
+	:D3DApp(hInstance), mBoxVB(0), mBoxIB(0), 
+	//mDiffuseMapSRV(0),
+	//mFireMapSRV(0),
+	mEyePosW(0.0f, 0.0f, 0.0f),
 	mTheta(1.5f*MathHelper::Pi), mPhi(0.4f*MathHelper::Pi), mRadius(2.5f)
 {
 	m_mainWndCaption = L"Crate Demo";
@@ -42,6 +45,11 @@ CrateApp::CrateApp(HINSTANCE hInstance)
 	mBoxMat.Ambient = XMFLOAT4(0.5f, 0.5f, 0.5f, 1.0f);
 	mBoxMat.Diffuse = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	mBoxMat.Specular = XMFLOAT4(0.6f, 0.6f, 0.6f, 16.0f);
+
+	for (int i = 0; i < 120; ++i)
+	{
+		mFireMapSRV[i] = 0;
+	}
 }
 
 CrateApp::~CrateApp()
@@ -49,7 +57,13 @@ CrateApp::~CrateApp()
 	ReleaseCOM(mBoxVB);
 	ReleaseCOM(mBoxIB);
 
-	ReleaseCOM(mDiffuseMapSRV);
+	//ReleaseCOM(mDiffuseMapSRV);
+
+	for (int i = 0; i < 120; ++i)
+	{
+		ReleaseCOM(mFireMapSRV[i]);
+	}
+
 
 	Effects::DestroyAll();
 	InputLayouts::DestroyAll();
@@ -64,8 +78,21 @@ bool CrateApp::Init()
 	Effects::InitAll(m_d3dDevice);
 	InputLayouts::InitAll(m_d3dDevice);
 
-	HR(CreateDDSTextureFromFile(m_d3dDevice, L"Textures/WoodCrate01.dds", 0, &mDiffuseMapSRV));
+	//HR(CreateDDSTextureFromFile(m_d3dDevice, L"FireAnim/", 0, &mDiffuseMapSRV));
 
+	WCHAR buff[256];
+
+
+	for (int i = 0; i < 120; ++i)
+	{
+		swprintf(buff, sizeof(buff), L"FireAnim/Fire%03d.DDS", i + 1);
+
+		HR(CreateDDSTextureFromFile(m_d3dDevice, buff, 0, &(mFireMapSRV[i])));
+	}
+
+	
+
+	
 	BuildGeometryBuffers();
 
 	return true;
@@ -99,6 +126,9 @@ void CrateApp::UpdateScene(float dt)
 
 bool CrateApp::DrawScene()
 {
+
+	static int gCount = 0;
+
 	m_d3dImmediateContext->ClearRenderTargetView(m_renderTargetView, reinterpret_cast<const float*>(&Colors::LightSteelBlue));
 	m_d3dImmediateContext->ClearDepthStencilView(m_depthStencilView, D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 
@@ -120,6 +150,8 @@ bool CrateApp::DrawScene()
 	D3DX11_TECHNIQUE_DESC techDesc;
 	activeTech->GetDesc(&techDesc);
 
+	gCount = (gCount + 1) % 119;
+
 	for (UINT p = 0; p < techDesc.Passes; ++p)
 	{
 		m_d3dImmediateContext->IASetVertexBuffers(0, 1, &mBoxVB, &stride, &offset);
@@ -138,7 +170,8 @@ bool CrateApp::DrawScene()
 		Effects::BasicFX->SetTexTransform(XMLoadFloat4x4(&mTexTransform));
 
 		Effects::BasicFX->SetMaterial(mBoxMat);
-		Effects::BasicFX->SetDiffuseMap(mDiffuseMapSRV);
+		//Effects::BasicFX->SetDiffuseMap(mDiffuseMapSRV);
+		Effects::BasicFX->SetDiffuseMap(mFireMapSRV[gCount]);
 
 		activeTech->GetPassByIndex(p)->Apply(0, m_d3dImmediateContext);
 		m_d3dImmediateContext->DrawIndexed(mBoxIndexCount, mBoxIndexOffset, mBoxVertexOffset);
