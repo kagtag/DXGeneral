@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CrateDemo", "CrateDemo\Crat
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextureHillsAndWaves", "TextureHillsAndWaves\TextureHillsAndWaves.vcxproj", "{E5A5FF76-A680-4507-BD5C-B50D87D37E73}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BlendDemo", "BlendDemo\BlendDemo.vcxproj", "{98F9FE96-EE05-4C4C-A858-9806204864EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +93,14 @@ Global
 		{E5A5FF76-A680-4507-BD5C-B50D87D37E73}.Release|x64.Build.0 = Release|x64
 		{E5A5FF76-A680-4507-BD5C-B50D87D37E73}.Release|x86.ActiveCfg = Release|Win32
 		{E5A5FF76-A680-4507-BD5C-B50D87D37E73}.Release|x86.Build.0 = Release|Win32
+		{98F9FE96-EE05-4C4C-A858-9806204864EB}.Debug|x64.ActiveCfg = Debug|x64
+		{98F9FE96-EE05-4C4C-A858-9806204864EB}.Debug|x64.Build.0 = Debug|x64
+		{98F9FE96-EE05-4C4C-A858-9806204864EB}.Debug|x86.ActiveCfg = Debug|Win32
+		{98F9FE96-EE05-4C4C-A858-9806204864EB}.Debug|x86.Build.0 = Debug|Win32
+		{98F9FE96-EE05-4C4C-A858-9806204864EB}.Release|x64.ActiveCfg = Release|x64
+		{98F9FE96-EE05-4C4C-A858-9806204864EB}.Release|x64.Build.0 = Release|x64
+		{98F9FE96-EE05-4C4C-A858-9806204864EB}.Release|x86.ActiveCfg = Release|Win32
+		{98F9FE96-EE05-4C4C-A858-9806204864EB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
