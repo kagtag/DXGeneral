@@ -625,12 +625,12 @@ bool LightingApp::SetShaderParameters(XMMATRIX worldMatrix, XMMATRIX viewMatrix,
 	dataPtr2 = reinterpret_cast<LightBufferType*>(mappedResource.pData);
 
 
-	dataPtr2->dir = DirectionalLight(); 
-					//m_dirLight;
+	dataPtr2->dir = //DirectionalLight(); 
+					m_dirLight;
 	dataPtr2->point = //PointLight(); 
 					m_pointLight;
-	dataPtr2->spot = SpotLight(); 
-					 //m_spotLight;
+	dataPtr2->spot = //SpotLight(); 
+					 m_spotLight;
 
 	dataPtr2->mat = material; //actually could be static
 

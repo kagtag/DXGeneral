@@ -12,7 +12,7 @@ using namespace DirectX;
 
 struct DirectionalLight
 {
-	DirectionalLight() { ZeroMemory(this, sizeof(this)); }
+	DirectionalLight() { ZeroMemory(this, sizeof(DirectionalLight)); }
 
 	XMFLOAT4 Ambient;
 	XMFLOAT4 Diffuse;
@@ -23,7 +23,7 @@ struct DirectionalLight
 
 struct PointLight
 {
-	PointLight() { ZeroMemory(this, sizeof(this)); }
+	PointLight() { ZeroMemory(this, sizeof(PointLight)); }
 
 	XMFLOAT4 Ambient;
 	XMFLOAT4 Diffuse;
@@ -40,7 +40,7 @@ struct PointLight
 
 struct SpotLight
 {
-	SpotLight() { ZeroMemory(this, sizeof(this)); }
+	SpotLight() { ZeroMemory(this, sizeof(SpotLight)); }
 
 	XMFLOAT4 Ambient;
 	XMFLOAT4 Diffuse;
@@ -58,7 +58,7 @@ struct SpotLight
 
 struct Material
 {
-	Material() { ZeroMemory(this, sizeof(this)); }
+	Material() { ZeroMemory(this, sizeof(Material)); }
 
 	XMFLOAT4 Ambient;
 	XMFLOAT4 Diffuse;
