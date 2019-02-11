@@ -190,15 +190,15 @@ void RenderStates::InitAll(ID3D11Device* device)
 
 void RenderStates::DestroyAll()
 {
-	SafeDelete(WireframeRS);
-	SafeDelete(NoCullRS);
-	SafeDelete(CullClockwiseRS);
+	ReleaseCOM(WireframeRS);
+	ReleaseCOM(NoCullRS);
+	ReleaseCOM(CullClockwiseRS);
 
-	SafeDelete(AlphaToCoverageBS);
-	SafeDelete(TransparentBS);
-	SafeDelete(NoRenderTargetWriteBS);
+	ReleaseCOM(AlphaToCoverageBS);
+	ReleaseCOM(TransparentBS);
+	ReleaseCOM(NoRenderTargetWriteBS);
 
-	SafeDelete(MarkMirrorDSS);
-	SafeDelete(DrawReflectionDSS);
-	SafeDelete(NoDoubleBlendDSS);
+	ReleaseCOM(MarkMirrorDSS);
+	ReleaseCOM(DrawReflectionDSS);
+	ReleaseCOM(NoDoubleBlendDSS);
 }
