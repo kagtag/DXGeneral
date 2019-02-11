@@ -198,6 +198,8 @@ bool MirrorApp::DrawScene()
 	m_d3dImmediateContext->IASetInputLayout(InputLayouts::Basic32);
 	m_d3dImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
+	//m_d3dImmediateContext->RSSetState(RenderStates::WireframeRS);
+
 	float blendFactor[] = { 0.0f,0.0f,0.0f,0.0f };
 
 	UINT stride = sizeof(Vertex::Basic32);
