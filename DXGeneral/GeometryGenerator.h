@@ -79,6 +79,12 @@ public:
 	///</summary>
 	void CreateBox(float width, float height, float depth, MeshData& meshData);
 
+	///<summary>
+	/// Creates a quad covering the screen in NDC coordinates.  This is useful for
+	/// postprocessing effects.
+	///</summary>
+	void CreateFullscreenQuad(MeshData& meshData);
+
 private:
 
 	//helper functions for building cylinder
