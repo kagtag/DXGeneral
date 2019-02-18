@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BasicTessellation", "BasicT
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BezierPatch", "BezierPatch\BezierPatch.vcxproj", "{0EDEFA3A-0F3E-4BCF-AC6D-907C50B50FCE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Camera", "Camera\Camera.vcxproj", "{708E1D38-52C6-4AB3-9413-E2EDF2171C54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -151,6 +153,14 @@ Global
 		{0EDEFA3A-0F3E-4BCF-AC6D-907C50B50FCE}.Release|x64.Build.0 = Release|x64
 		{0EDEFA3A-0F3E-4BCF-AC6D-907C50B50FCE}.Release|x86.ActiveCfg = Release|Win32
 		{0EDEFA3A-0F3E-4BCF-AC6D-907C50B50FCE}.Release|x86.Build.0 = Release|Win32
+		{708E1D38-52C6-4AB3-9413-E2EDF2171C54}.Debug|x64.ActiveCfg = Debug|x64
+		{708E1D38-52C6-4AB3-9413-E2EDF2171C54}.Debug|x64.Build.0 = Debug|x64
+		{708E1D38-52C6-4AB3-9413-E2EDF2171C54}.Debug|x86.ActiveCfg = Debug|Win32
+		{708E1D38-52C6-4AB3-9413-E2EDF2171C54}.Debug|x86.Build.0 = Debug|Win32
+		{708E1D38-52C6-4AB3-9413-E2EDF2171C54}.Release|x64.ActiveCfg = Release|x64
+		{708E1D38-52C6-4AB3-9413-E2EDF2171C54}.Release|x64.Build.0 = Release|x64
+		{708E1D38-52C6-4AB3-9413-E2EDF2171C54}.Release|x86.ActiveCfg = Release|Win32
+		{708E1D38-52C6-4AB3-9413-E2EDF2171C54}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
