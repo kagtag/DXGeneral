@@ -10,6 +10,8 @@ ID3D11RasterizerState* RenderStates::NoCullRS    = 0;
 ID3D11BlendState*      RenderStates::AlphaToCoverageBS = 0;
 ID3D11BlendState*      RenderStates::TransparentBS     = 0;
 
+ID3D11DepthStencilState* RenderStates::LessEqualDSS = 0;
+
 void RenderStates::InitAll(ID3D11Device* device)
 {
 	//
@@ -66,6 +68,18 @@ void RenderStates::InitAll(ID3D11Device* device)
 	transparentDesc.RenderTarget[0].RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;
 
 	HR(device->CreateBlendState(&transparentDesc, &TransparentBS));
+
+	//
+	// LessEqualDSS
+	//
+
+	D3D11_DEPTH_STENCIL_DESC lessEqualDesc;
+	lessEqualDesc.DepthEnable = true;
+	lessEqualDesc.DepthWriteMask = D3D11_DEPTH_WRITE_MASK_ALL;
+	lessEqualDesc.DepthFunc = D3D11_COMPARISON_LESS_EQUAL; //
+	lessEqualDesc.StencilEnable = false;
+
+	HR(device->CreateDepthStencilState(&lessEqualDesc, &LessEqualDSS));
 }
 
 void RenderStates::DestroyAll()
@@ -74,4 +88,6 @@ void RenderStates::DestroyAll()
 	ReleaseCOM(NoCullRS);
 	ReleaseCOM(AlphaToCoverageBS);
 	ReleaseCOM(TransparentBS);
+
+	ReleaseCOM(LessEqualDSS);
 }
