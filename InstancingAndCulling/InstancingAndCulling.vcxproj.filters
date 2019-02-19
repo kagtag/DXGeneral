@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="DXGeneral">
+      <UniqueIdentifier>{b5df6104-878b-4507-8cff-dcada8f1549f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\DXGeneral\Camera.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\d3dApp.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\d3dUtil.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\d3dx11effect.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\DDSTextureLoader.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\dxerr.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\Effects.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\GameTimer.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\GeometryGenerator.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\LightHelper.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\MathHelper.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\RenderStates.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\Vertex.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXGeneral\Waves.h">
+      <Filter>DXGeneral</Filter>
+    </ClInclude>
+    <ClInclude Include="MyEffects.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyVertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\DXGeneral\Camera.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\d3dApp.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\d3dUtil.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\DDSTextureLoader.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\dxerr.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\Effects.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\GameTimer.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\GeometryGenerator.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\LightHelper.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\MathHelper.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\RenderStates.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\Vertex.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXGeneral\Waves.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
+    <ClCompile Include="InstancingAndCullingDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyEffects.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyVertex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="FX\InstancedBasic.fx">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+    <FxCompile Include="FX\LightHelper.fx">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>
