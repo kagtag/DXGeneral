@@ -125,6 +125,9 @@
     <ClCompile Include="..\DXGeneral\SkyVertex.cpp">
       <Filter>DXGeneral</Filter>
     </ClCompile>
+    <ClCompile Include="..\DXGeneral\AppHelper.cpp">
+      <Filter>DXGeneral</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="FX\Basic.fx">
