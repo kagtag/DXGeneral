@@ -1,4 +1,12 @@
 
+#include "d3dApp.h"
+#include "d3dx11Effect.h"
+#include "GeometryGenerator.h"
+#include "MathHelper.h"
+#include "LightHelper.h"
+
+#include "Camera.h"
+
 #if defined(DEBUG) | defined(_DEBUG) 
 
 #define DEFAULT_WINMAIN(className) \
