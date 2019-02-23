@@ -589,3 +589,15 @@ void D3DApp::CalculateFrameStats()
 	}
 }
 //
+
+void D3DApp::PreProcessing()
+{
+	PreProcessing(m_renderTargetView, m_depthStencilView);
+}
+
+void D3DApp::PreProcessing(ID3D11RenderTargetView* rtv, ID3D11DepthStencilView* dsv)
+{
+	// Common preprocessing steps when drawing
+	m_d3dImmediateContext->ClearRenderTargetView(rtv, reinterpret_cast<const float*>(&Colors::Silver));
+	m_d3dImmediateContext->ClearDepthStencilView(dsv, D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
+}

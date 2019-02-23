@@ -34,6 +34,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, \
 
 #endif 
 
+#define MATRICES_SET(effect, worldMat)\
+world = XMLoadFloat4x4(&worldMat);\
+worldInvTranspose = MathHelper::InverseTranspose(world);\
+worldViewProj = world*view*proj;\
+effect->SetWorld(world);\
+effect->SetWorldInvTranspose(worldInvTranspose);\
+effect->SetWorldViewProj(worldViewProj);
+
+
 // Common methods appear in almost all Apps
 // mainly First Person Camera operation
 class CommonApp : public D3DApp

@@ -40,6 +40,11 @@ protected:
 
 	void CalculateFrameStats();
 
+	void PreProcessing();
+	void PreProcessing(ID3D11RenderTargetView* rtv,
+		ID3D11DepthStencilView* dsv);
+
+
 protected:
 
 	HINSTANCE m_hAppInst;
