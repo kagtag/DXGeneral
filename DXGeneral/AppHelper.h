@@ -7,6 +7,8 @@
 
 #include "Camera.h"
 
+#include "RenderStates.h"
+
 #if defined(DEBUG) | defined(_DEBUG) 
 
 #define DEFAULT_WINMAIN(className) \
@@ -77,7 +79,7 @@ public:
 	bool Init();
 
 protected:
-	void BuildShapeGeometryBuffers();
+	virtual void BuildShapeGeometryBuffers();
 	void BuildSkullGeometryBuffers();
 
 protected:

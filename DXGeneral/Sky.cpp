@@ -62,7 +62,7 @@ ID3D11ShaderResourceView* Sky::CubeMapSRV()
 	return mCubeMapSRV;
 }
 
-void Sky::Draw(ID3D11DeviceContext* dc, const Camera& camera)
+void Sky::Draw(ID3D11DeviceContext* dc, const Camera& camera, SkyEffect* fx, ID3D11InputLayout* layout)
 {
 	// center Sky about eye in world space
 	XMFLOAT3 eyePos = camera.GetPosition();
@@ -70,21 +70,21 @@ void Sky::Draw(ID3D11DeviceContext* dc, const Camera& camera)
 
 	XMMATRIX WVP = XMMatrixMultiply(T, camera.ViewProj());
 
-	SkyEffects::SkyFX->SetWorldViewProj(WVP);
-	SkyEffects::SkyFX->SetCubeMap(mCubeMapSRV);
+	fx->SetWorldViewProj(WVP);
+	fx->SetCubeMap(mCubeMapSRV);
 
 	UINT stride = sizeof(XMFLOAT3);
 	UINT offset = 0;
 	dc->IASetVertexBuffers(0, 1, &mVB, &stride, &offset);
 	dc->IASetIndexBuffer(mIB, DXGI_FORMAT_R16_UINT, 0);
-	dc->IASetInputLayout(SkyInputLayouts::Pos);                              //
+	dc->IASetInputLayout(layout);                              //
 	dc->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
 	D3DX11_TECHNIQUE_DESC techDesc;
-	SkyEffects::SkyFX->SkyTech->GetDesc(&techDesc);
+	fx->SkyTech->GetDesc(&techDesc);
 	for (UINT p = 0; p < techDesc.Passes; ++p)
 	{
-		ID3DX11EffectPass* pass = SkyEffects::SkyFX->SkyTech->GetPassByIndex(p);
+		ID3DX11EffectPass* pass = fx->SkyTech->GetPassByIndex(p);
 
 		pass->Apply(0, dc);
 

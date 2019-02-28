@@ -2,6 +2,8 @@
 
 #include "d3dUtil.h"
 
+#include "SkyEffects.h"
+
 class Camera;
 
 class Sky
@@ -12,7 +14,7 @@ public:
 
 	ID3D11ShaderResourceView* CubeMapSRV();
 
-	void Draw(ID3D11DeviceContext* dc, const Camera& camera);
+	void Draw(ID3D11DeviceContext* dc, const Camera& camera, SkyEffect* fx, ID3D11InputLayout* layout);
 
 private:
 	Sky(const Sky& rhs);

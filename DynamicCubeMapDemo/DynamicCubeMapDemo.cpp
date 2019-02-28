@@ -321,7 +321,7 @@ void DynamicCubeMapApp::DrawScene(const Camera& camera, bool drawCenterSphere)
 		}
 	}
 
-	mSky->Draw(m_d3dImmediateContext, camera);
+	mSky->Draw(m_d3dImmediateContext, camera, SkyEffects::SkyFX);
 
 	// restore default states
 	m_d3dImmediateContext->RSSetState(0);

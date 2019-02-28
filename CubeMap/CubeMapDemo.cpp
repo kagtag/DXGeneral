@@ -249,7 +249,7 @@ bool CubeMapApp::DrawScene()
 		m_d3dImmediateContext->DrawIndexed(mSkullIndexCount, 0, 0);
 	}
 
-	mSky->Draw(m_d3dImmediateContext, mCam);
+	mSky->Draw(m_d3dImmediateContext, mCam, SkyEffects::SkyFX);
 
 	// restore default states
 	m_d3dImmediateContext->RSSetState(0);

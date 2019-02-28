@@ -5,7 +5,6 @@ class SkyInputLayoutDesc
 {
 public:
 	static const D3D11_INPUT_ELEMENT_DESC Pos[1];
-	static const D3D11_INPUT_ELEMENT_DESC Basic32[3];
 };
 
 class SkyInputLayouts
