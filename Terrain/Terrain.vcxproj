@@ -131,11 +131,11 @@
     <ClInclude Include="..\DXGeneral\Sky.h" />
     <ClInclude Include="..\DXGeneral\SkyEffects.h" />
     <ClInclude Include="..\DXGeneral\SkyVertex.h" />
+    <ClInclude Include="..\DXGeneral\TerEffects.h" />
+    <ClInclude Include="..\DXGeneral\Terrain.h" />
+    <ClInclude Include="..\DXGeneral\TerVertex.h" />
     <ClInclude Include="..\DXGeneral\Vertex.h" />
     <ClInclude Include="..\DXGeneral\Waves.h" />
-    <ClInclude Include="TerEffects.h" />
-    <ClInclude Include="Terrain.h" />
-    <ClInclude Include="TerVertex.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\DXGeneral\AppHelper.cpp" />
@@ -153,12 +153,12 @@
     <ClCompile Include="..\DXGeneral\Sky.cpp" />
     <ClCompile Include="..\DXGeneral\SkyEffects.cpp" />
     <ClCompile Include="..\DXGeneral\SkyVertex.cpp" />
+    <ClCompile Include="..\DXGeneral\TerEffects.cpp" />
+    <ClCompile Include="..\DXGeneral\Terrain.cpp" />
+    <ClCompile Include="..\DXGeneral\TerVertex.cpp" />
     <ClCompile Include="..\DXGeneral\Vertex.cpp" />
     <ClCompile Include="..\DXGeneral\Waves.cpp" />
-    <ClCompile Include="TerEffects.cpp" />
-    <ClCompile Include="Terrain.cpp" />
     <ClCompile Include="TerrainDemo.cpp" />
-    <ClCompile Include="TerVertex.cpp" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="FX\Basic.fx">
