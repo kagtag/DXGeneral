@@ -145,7 +145,7 @@ bool TerrainApp::DrawScene()
 	m_d3dImmediateContext->RSSetState(0);
 
 	//
-	mSky->Draw(m_d3dImmediateContext, mCam, TerEffects::SkyFX, TerInputLayouts::Pos);
+	mSky->Draw(m_d3dImmediateContext, mCam, TerInputLayouts::Pos, TerEffects::SkyFX);
 
 	// restore default states, as SkyFX changes them in the effect file
 	m_d3dImmediateContext->RSSetState(0);

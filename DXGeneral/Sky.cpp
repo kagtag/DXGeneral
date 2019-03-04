@@ -62,7 +62,7 @@ ID3D11ShaderResourceView* Sky::CubeMapSRV()
 	return mCubeMapSRV;
 }
 
-void Sky::Draw(ID3D11DeviceContext* dc, const Camera& camera, SkyEffect* fx, ID3D11InputLayout* layout)
+void Sky::Draw(ID3D11DeviceContext* dc, const Camera& camera, ID3D11InputLayout* layout, SkyEffect* fx)
 {
 	// center Sky about eye in world space
 	XMFLOAT3 eyePos = camera.GetPosition();

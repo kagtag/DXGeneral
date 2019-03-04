@@ -14,7 +14,7 @@ public:
 
 	ID3D11ShaderResourceView* CubeMapSRV();
 
-	void Draw(ID3D11DeviceContext* dc, const Camera& camera, SkyEffect* fx, ID3D11InputLayout* layout);
+	void Draw(ID3D11DeviceContext* dc, const Camera& camera, ID3D11InputLayout* layout, SkyEffect* fx);
 
 private:
 	Sky(const Sky& rhs);

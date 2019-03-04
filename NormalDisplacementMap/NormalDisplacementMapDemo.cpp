@@ -230,7 +230,7 @@ bool NormalDisplacementMapApp::DrawScene()
 		m_d3dImmediateContext->DrawIndexed(mSkullIndexCount, 0, 0);
 	}
 
-	mSky->Draw(m_d3dImmediateContext, mCam, NorDisEffects::SkyFX, NorDisInputLayouts::Pos);
+	mSky->Draw(m_d3dImmediateContext, mCam, NorDisInputLayouts::Pos, NorDisEffects::SkyFX);
 
 	// restore default states, as the SkyFX changes them in the effect file
 	m_d3dImmediateContext->RSSetState(0);
