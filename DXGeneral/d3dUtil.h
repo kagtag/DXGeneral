@@ -69,7 +69,7 @@ class D3DHelper
 	//	std::vector<std::wstring>& filenames,
 	//	
 	//)
-
+public:
 	static ID3D11ShaderResourceView* CreateRandomTexture1DSRV(ID3D11Device* device);
 };
 
